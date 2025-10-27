@@ -1,39 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Consciência Negra - Sergio Oliva</title>
     <link rel="stylesheet" href="style33.css">
 </head>
 <body>
 
-    <header>Consciência Negra</header>
-
-    <div class="container">
-        <div class="texto">
-            <h2>Sergio Oliva</h2>
-            <p>
-                Sergio Oliva (Havana, 4 de Julho de 1941 — Chicago, 12 de novembro de 2012), apelidado de <b>O Mito</b>, 
-                foi um fisiculturista cubano radicado nos Estados Unidos. Tornou-se tricampeão do <b>Mr. Olympia</b> 
-                (1967, 1968 e 1969). Arnold Schwarzenegger considerava Sergio o maior fisiculturista da história, 
-                tendo sido o único atleta que o venceu no Mr. Olympia.
-            </p>
-            <p>
-                Sergio morreu em 12 de novembro de 2012, em Chicago, vítima de uma falência renal, aos 71 anos.
-            </p>
+    <header>
+        <div class="header-inner">
+            <span class="site-title">Consciência Negra</span>
+            <button id="btn-competicoes" class="btn-competicoes" aria-haspopup="dialog" aria-controls="modal-competicoes">
+                Competições
+            </button>
         </div>
+    </header>
 
-        <div class="imagem">
-            <img src="serginho_vitoria.jpg" alt="Sergio Oliva">
+    <main>
+        <div class="container">
+            <div class="texto">
+                <h2>Sergio Oliva</h2>
+                <p>
+                    Sergio Oliva (Havana, 4 de Julho de 1941 — Chicago, 12 de novembro de 2012), apelidado de <b>O Mito</b>,
+                    foi um fisiculturista cubano radicado nos Estados Unidos. Tornou-se tricampeão do <b>Mr. Olympia</b>
+                    (1967, 1968 e 1969). Arnold Schwarzenegger considerava Sergio o maior fisiculturista da história,
+                    tendo sido o único atleta que o venceu no Mr. Olympia.
+                </p>
+                <p>
+                    Sergio morreu em 12 de novembro de 2012, em Chicago, vítima de uma falência renal, aos 71 anos.
+                </p>
+            </div>
+
+            <div class="imagem">
+                <img src="serginho_vitoria.jpg" alt="Sergio Oliva">
+            </div>
         </div>
-    </div>
+    </main>
 
     <footer>
         © 2025 - Projeto Consciência Negra | Inspirado em Sergio Oliva
     </footer>
 
-    <script src="app33.js"></script>
+    <div id="modal-competicoes" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-overlay" data-close="true"></div>
+        <div class="modal-content" role="document">
+            <header class="modal-header">
+                <h3 id="modal-title">Títulos no fisiculturismo — Sergio Oliva</h3>
+                <button id="modal-close" class="modal-close" aria-label="Fechar">×</button>
+            </header>
 
+            <div class="modal-body">
+                <ol class="competicoes-list">
+                    <li>1965 — AAU Junior Mr America - Maior massa muscular</li>
+                    <li>1965 — AAU Mr America - Maior massa muscular</li>
+                    <li>1966 — AAU Junior Mr America</li>
+                    <li>1966 — AAU Junior Mr America - Maior massa muscular</li>
+                    <li>1966 — AAU Mr America - Maior massa muscular</li>
+                    <li>1966 — IFBB Mr World</li>
+                    <li>1967 — IFBB Mr. Universo</li>
+                    <li>1967 — IFBB Mr. Olympia</li>
+                    <li>1968 — IFBB Mr. Olympia</li>
+                    <li>1969 — IFBB Mr. Olympia</li>
+                    <li>1970 — IFBB Mr. Olympia - Segundo lugar</li>
+                    <li>1972 — WBBG Mr Galaxy</li>
+                    <li>1972 — IFBB Mr. Olympia - Segundo lugar</li>
+                    <li>1973 — IFBB Mr International</li>
+                    <li>1974 — WBBG Mr International</li>
+                    <li>1975 — WBBG Mr. Olympus</li>
+                    <li>1976 — WBBG Mr. Olympus</li>
+                    <li>1977 — WABBA World Championships</li>
+                    <li>1978 — WBBG Mr. Olympus</li>
+                    <li>1980 — WABBA Pro World Cup</li>
+                    <li>1980 — WABBA World Championships</li>
+                    <li>1981 — WABBA Pro World Cup</li>
+                    <li>1984 — IFBB Mr. Olympia - Oitavo lugar</li>
+                    <li>1985 — IFBB Mr. Olympia - Oitavo lugar</li>
+                </ol>
+            </div>
+
+            <footer class="modal-footer">
+                <button id="modal-close-2" class="btn-primario">Fechar</button>
+            </footer>
+        </div>
+    </div>
+    <script src="app33.js" defer></script>
 </body>
 </html>
