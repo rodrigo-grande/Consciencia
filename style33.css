@@ -1,54 +1,68 @@
+/* ======= RESET/BÁSICOS ======= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     background-color: #121212;
     color: #f5f5f5;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* ===== CABEÇALHO ===== */
+/* ======= HEADER ======= */
 header {
     background: linear-gradient(90deg, #000, #222);
     color: #FFD700;
-    text-align: center;
-    padding: 40px 0;
-    font-size: 2.3em;
-    font-weight: bold;
-    letter-spacing: 2px;
+    padding: 18px 20px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 40;
 }
 
-header h1 {
-    margin: 0;
-}
-
-/* ===== BOTÕES ===== */
-.botoes {
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
-    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.botoes button {
-    background-color: #FFD700;
-    color: #000;
-    border: none;
-    font-size: 0.6em;
-    padding: 10px 20px;
-    border-radius: 20px;
+/* título do site */
+.site-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* ======= BOTÕES DO CABEÇALHO ======= */
+.botoes-header {
+    display: flex;
+    gap: 12px;
+}
+
+/* estilo dos botões */
+.btn-competicoes {
+    background: linear-gradient(180deg, rgba(255,215,0,0.15), rgba(255,215,0,0.08));
+    color: #FFD700;
+    border: 1px solid rgba(255,215,0,0.25);
+    padding: 8px 14px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn-competicoes:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
-.botoes button:hover {
-    background-color: #ffea70;
-}
-
-/* ===== CONTEÚDO PRINCIPAL ===== */
+/* ======= LAYOUT PRINCIPAL ======= */
 .container {
     display: flex;
     align-items: center;
@@ -56,6 +70,8 @@ header h1 {
     flex-wrap: wrap;
     padding: 60px 10%;
     gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .texto, .imagem {
@@ -72,93 +88,34 @@ header h1 {
 .texto {
     flex: 1 1 400px;
 }
-
 .texto h2 {
     color: #FFD700;
-    margin-bottom: 20px;
-    font-size: 2em;
+    margin-bottom: 18px;
+    font-size: 2rem;
 }
-
 .texto p {
     line-height: 1.7;
-    font-size: 1.1em;
+    font-size: 1.05rem;
+    color: #eaeaea;
 }
 
 .imagem {
     flex: 1 1 350px;
     text-align: center;
 }
-
 .imagem img {
     width: 350px;
     height: auto;
     border-radius: 12px;
     border: 3px solid #FFD700;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     transition: transform 0.3s ease;
 }
-
 .imagem img:hover {
     transform: scale(1.05);
 }
 
-/* ===== SEÇÃO DE TÍTULOS E POSES ===== */
-#titulos, #poses {
-    background-color: #1c1c1c;
-    margin: 50px auto;
-    width: 80%;
-    max-width: 900px;
-    padding: 30px;
-    border-radius: 12px;
-    border: 2px solid #FFD700;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
-
-#titulos.mostrar, #poses.mostrar {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-#titulos h3, #poses h3 {
-    color: #FFD700;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* ===== LISTA DE TÍTULOS ===== */
-#titulos ul {
-    list-style: none;
-    padding: 0;
-}
-
-#titulos li {
-    padding: 6px 0;
-    border-bottom: 1px solid #333;
-}
-
-/* ===== GALERIA ===== */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-}
-
-.galeria img {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid #FFD700;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
-}
-
-.galeria img:hover {
-    transform: scale(1.05);
-}
-
-/* ===== RODAPÉ ===== */
+/* ======= FOOTER ======= */
 footer {
     text-align: center;
     padding: 25px;
@@ -166,27 +123,133 @@ footer {
     background: #0a0a0a;
     font-size: 0.9em;
     border-top: 1px solid #333;
+    margin-top: 40px;
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/* ======= MODAL (GENÉRICO) ======= */
+.modal[hidden] {
+    display: none;
+}
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    transition: opacity .22s ease;
+}
+.modal[open] .modal-overlay {
+    opacity: 1;
+}
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 820px;
+    background: linear-gradient(180deg, #141414, #0f0f0f);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    overflow: hidden;
+    transform: translateY(20px) scale(.98);
+    transition: transform .22s ease, opacity .22s ease;
+    z-index: 10;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+}
+.modal[open] .modal-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* header/body/footer dentro da modal */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.modal-header h3 {
+    margin: 0;
+    color: #FFD700;
+    font-size: 1.05rem;
+}
+.modal-close {
+    background: transparent;
+    border: none;
+    color: #ddd;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.modal-body {
+    padding: 18px 20px;
+    overflow-y: auto;
+    color: #e8e8e8;
+    font-size: 0.98rem;
+    scrollbar-width: thin;
+}
+
+/* lista de competições */
+.competicoes-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    line-height: 1.6;
+}
+
+/* ======= MODAL DE POSES ======= */
+.imagens-poses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    padding: 16px;
+}
+.imagens-poses img {
+    width: 220px;
+    border-radius: 10px;
+    border: 2px solid #FFD700;
+    transition: transform .3s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+.imagens-poses img:hover {
+    transform: scale(1.06);
+}
+
+/* ======= BOTÃO FECHAR PADRÃO ======= */
+.btn-primario {
+    background: #FFD700;
+    color: #111;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ======= RESPONSIVIDADE ======= */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
         text-align: center;
-        padding: 40px 20px;
+        padding: 40px 16px;
     }
-
     .imagem img {
         width: 80%;
     }
-
-    .botoes {
-        right: 20px;
-        gap: 6px;
-    }
-
-    .botoes button {
-        font-size: 0.8em;
-        padding: 8px 16px;
+    .modal-content {
+        max-width: 94%;
     }
 }
