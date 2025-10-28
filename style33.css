@@ -125,6 +125,11 @@ footer {
     border-top: 1px solid #333;
 }
 
+footer {
+    display: block;
+    unicode-bidi: isolate;
+}
+
 /* ======= MODAL (GENÉRICO) ======= */
 .modal[hidden] {
     display: none;
