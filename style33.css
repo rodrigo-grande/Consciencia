@@ -117,17 +117,17 @@ header {
 
 /* ======= FOOTER ======= */
 footer {
-    text-align: center;
-    padding: 25px;
-    color: #bbb;
-    background: #0a0a0a;
+    position: fixed;          /* Fica fixo na tela */
+    bottom: 0;                /* Grudado na parte de baixo */
+    left: 0;
+    width: 100%;              /* Ocupa toda a largura */
+    background: #0a0a0a;      /* Mesmo fundo escuro */
+    color: #bbb;              /* Cor de texto suave */
+    text-align: center;       /* Centraliza o texto */
+    padding: 15px 0;          /* Espaçamento interno */
+    border-top: 1px solid #333; /* Linha sutil no topo */
     font-size: 0.9em;
-    border-top: 1px solid #333;
-}
-
-footer {
-    display: block;
-    unicode-bidi: isolate;
+    z-index: 50;              /* Garante que fique acima de outros elementos */
 }
 
 /* ======= MODAL (GENÉRICO) ======= */
