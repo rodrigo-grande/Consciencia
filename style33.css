@@ -117,12 +117,12 @@ header {
 
 /* ======= FOOTER ======= */
 footer {
-     background-color: #111;
-    color: #fff;
     text-align: center;
-    padding: 12px 0;
+    padding: 25px;
+    color: #bbb;
+    background: #0a0a0a;
     font-size: 0.9em;
-    margin-top: auto;
+    border-top: 1px solid #333;
 }
 
 /* ======= MODAL (GENÉRICO) ======= */
