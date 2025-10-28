@@ -1,4 +1,4 @@
-// ======= ANIMAÇÃO DE ENTRADA =======
+
 const elementos = document.querySelectorAll('.texto, .imagem');
 
 function aparecerAoRolar() {
@@ -11,7 +11,7 @@ function aparecerAoRolar() {
 window.addEventListener('load', aparecerAoRolar);
 window.addEventListener('scroll', aparecerAoRolar);
 
-// ======= FUNÇÃO GENÉRICA DE MODAIS =======
+
 function configurarModal(botaoId, modalId) {
     const botao = document.getElementById(botaoId);
     const modal = document.getElementById(modalId);
